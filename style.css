@@ -1,0 +1,385 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+:root{
+    --black: #272d3b;
+    --red: #fb72ab;
+    --coral: #eeb0af;
+    --pink: #f69c9a;
+    --gradient: linear-gradient(90deg, var(--red),var(--coral));
+}
+
+*::selection{
+    background: var(--red);
+    color: #fff;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+section{
+padding: 3rem 4%;
+
+}
+
+.btn{
+display:inline-block;
+padding:.7rem 3rem;
+margin-top:1rem;
+border-radius:5rem;
+background:#fb72ab;
+color: #272d3b;
+cursor:pointer;
+font-size:1.7rem;
+}
+
+.btn:hover{
+transform: scale(1.1);
+
+}
+
+   .heading{
+        text-align: center;
+        color: var(--red);
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 4rem;
+        text-transform: uppercase;
+        padding: 3rem;
+    }
+
+
+.maskit .box-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+.maskit .box-container .box{
+        margin: 1rem;
+        border-radius: 5rem;
+        text-align: center;
+        background: rgba(237, 23,111,.05);
+        padding: 1rem;
+        flex: 1 1 30rem;
+    }
+ .maskit .box-container .box i{
+        color: var(--red);
+        font-size: 5rem;
+        padding: 2rem;
+    }
+
+.maskit .box-container .box h3{
+        color: var(--black);
+        font-size: 2.4rem;
+        padding: 1rem;
+    }
+
+.maskit .box-container .box p{
+        color: #666;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+.maskit .box-container .box:hover{
+        background:var(--gradient);
+    }
+.maskit .box-container .box:hover> *{
+        color: #fff;
+    }
+
+    .heading{
+        text-align: center;
+        color: var(--red);
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 4rem;
+        text-transform: uppercase;
+        padding: 3rem;
+    }
+    .payment .box-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .payment  .box-container .box{
+        margin: 1rem;
+        border-radius: 5rem;
+        text-align: center;
+        background: rgba(237, 23,111,.05);
+        padding: 1rem;
+        flex: 1 1 30rem;
+    }
+    .payment  .box-container .box i{
+        color: var(--red);
+        font-size: 5rem;
+        padding: 2rem;
+    }
+
+    .payment  .box-container .box h2{
+        color: var(--black);
+        font-size: 2.4rem;
+        padding: 1rem;
+    }
+
+    .payment  .box-container .box p{
+        color: #666;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    .payment  .box-container .box:hover{
+        background:var(--gradient);
+    }
+    .payment  .box-container .box:hover> *{
+        color: #fff;
+    }
+    .heading{
+        text-align: center;
+        color: var(--red);
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 4rem;
+        text-transform: uppercase;
+        padding: 3rem;
+    }
+    .pricing .box-container .box{
+        flex: 1 1 1rem;
+        text-align: center;
+        margin: 1rem;
+        padding: 2rem 0;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+        border: .1rem solid rgba(0,0,0,.1);
+    }
+    .pricing .box-container .box .price{
+        font-size: 4rem;
+        color: var(--black);
+        font-weight: bolder;
+    }
+    .pricing .box-container .box .price span{
+        font-size: 2rem;
+        font-weight: normal;
+    }
+    .pricing .box-container .box h3{
+        color: #fff;
+        background: var(--gradient);
+        font-size: 3rem;
+        padding: 1.5rem 0;
+        margin: 1rem 0;
+    }
+    .pricing .box-container .box ul{
+        list-style: none;
+        padding: 1rem 0;
+        border-bottom: .1rem solid var(--red);
+    }
+    .pricing .box-container .box ul li{
+        padding: 1rem o;
+        font-size: 1.7rem;
+        color: #666;
+    }
+    .pricing .box-container .box .btn{
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    color: #030303;
+    }
+
+.masks{
+background-size : cover;
+background-position:center;
+min-height: 100vh;
+text-align: center;
+}
+
+.masks .content{
+padding-top:5rem;
+max-width:100rem;
+margin: 0 auto;
+}
+
+.masks .content h3{
+font-size:3.5rem;
+color:#272d3b;
+}
+
+.masks .content p{
+font-size:1.7rem;
+color:#272d3b;
+padding:1rem 0;
+}
+
+
+.masks .swiper-container { 
+width: 100%; 
+padding-top: 5rem; 
+padding-bottom: 5rem;
+}
+
+.masks .swiper-slide { 
+width: 35rem; 
+height: 50rem;
+}
+
+.masks .swiper-slide img { 
+display: block; 
+width: 100%;
+height:100%;
+}
+
+
+
+
+
+.accordion {
+  background-color: #eee;
+  color: #000;
+  cursor: pointer;
+  padding: 22px;
+width:100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  transition: 0.4s;
+}
+
+.active .accordion:hover {
+  background-color: #f8c5da;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+
+  padding: 0 25px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-out;
+  max-height:0.2s ease-out;
+font-size: 16px;
+}
+
+.home{
+display:flex;
+align-items: center;
+min-height:100vh;
+background:url(sheet.jpg) no-repeat;
+background-size: 100%;
+background-position: center;
+}
+
+.home .content{
+max-width: 50rem;
+}
+
+.home .content h3{
+font-size: 4rem;
+font-family: sans-serif, cursive;
+color: #333;
+}
+
+.home .content span{
+font-size: 1.5rem;
+color: #494747;
+padding: 2rem 0;
+line-height: 1.5;
+}
+
+
+.review .box-container{
+display: flex;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
+
+.review .box-container .box{
+flex: 1 1 33rem;
+box-shadow: 0.5rem 0.5rem 1rem #000;
+border-radius: .5rem;
+padding: 3rem 2rem;
+position: relative;
+}
+
+
+.review .box-container .box .fa-quote-right{
+position: absolute;
+bottom:3rem; 
+right:3rem;
+font-size: 6rem;
+color:#eee;
+
+}
+
+.review .box-container .box .starts i{
+color: var(--coral);
+font-size:2rem;
+}
+
+.review .box-container .box p{
+color: #999;
+font-size:1.5rem;
+line-height:1.5;
+padding-top: 2rem;
+}
+
+.review .box-container .box .user{
+display: flex;
+align-items: center;
+padding-top: 2rem;
+}
+
+.review .box-container .box .user img{
+height:6rem;
+width:6rem;
+border-radius:50%;
+object-fit: cover;
+margin-right: 1rem;
+}
+
+.review .box-container .box .user h3{
+font-size: 2rem;
+color: #282727;
+}
+
+.review .box-container .box .user span{
+font-size: 1.5rem;
+color:#999;
+}
+
+
+
+
+
+@keyframes animate{
+0%{
+	transform:scaleY(0);
+}
+}
+
+
+
+

@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+:root{
+    --black: #272d3b;
+    --red: #fb72ab;
+    --coral: #eeb0af;
+    --pink: #f69c9a;
+    --orange: #FFA500;
+    --gradient: linear-gradient(90deg, var(--red),var(--coral));
+}
+
+*::selection{
+    background: var(--red);
+    color: #fff;
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+section{
+padding: 2rem 9%;
+}
+
+
+.btn{
+    display:inline-block;
+    padding:.7rem 3rem;
+    margin-top:1rem;
+    border-radius:5rem;
+    background:#fb72ab;
+    color: #272d3b;
+    cursor:pointer;
+    font-size:1.7rem;
+    }
+    
+.btn:hover{
+    transform: scale(1.1);
+    
+    }
+
+.heading{
+    text-align: center;
+    color: var(--red);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding: 3rem;
+}
+.about .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .box-container .box{
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    flex: 1 1 1 1rew;
+    border-radius: .5rem;
+    border:#eeb0af;
+    box-shadow:#666;
+    
+}
+.about .box-container .box img{
+    color: var(--red);
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+.about .box-container .box h3{
+    color: var(--red);
+    font-size: 2.4rem;
+    padding: 1rem;
+}
+
+.about .box-container .box p{
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+
+
+.membership{
+    background: no-repeat;
+    background-size:cover;
+    background-position:center;
+    min-height: 100vh;
+    text-align:center;
+    }
+    
+    .membership .content{
+    padding-top:5rem;
+    max-width:70rem;
+    margin:0 auto;
+    }
+    .membership .content h3{
+    font-size:4.5rem;
+    color:#272d3b;
+    }
+    
+    .membership .content p{
+    font-size:1.7rem;
+    color:#fb72ab;
+    padding:1rem 0;
+    }
+    .membership .box-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .membership .box-container .box{
+        margin: 1rem;
+        border-radius: 5rem;
+        text-align: center;
+        background: rgba(237, 23,111,.05);
+        padding: 1rem;
+        flex: 1 1 30rem ;
+    }
+    .membership .box-container .box img{
+        color: var(--red);
+        font-size: 5rem;
+        padding: 2rem;
+    }
+    
+    .membership .box-container .box h3{
+        color: var(--black);
+        font-size: 2.4rem;
+        padding: 1rem;
+    }
+    
+    .membership .box-container .box p{
+        color: #666;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+   
+    
+    .pricing .box-container{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+    }
+
+    .pricing .box-container .box{
+        flex: 1 1 33rem;
+        text-align: center;
+        margin: 1rem;
+        padding: 2rem 0;
+        box-shadow: 0 .5rem 1 rem var(--black);
+        border: .1rem solid var(--pink);
+    }
+
+    .pricing .box-container .box .price{
+        font-size: 4rem;
+        color:var(--black);
+        font-weight: bolder;
+
+    }
+
+    .pricing .box-container .box .price span{
+        font-size: 2rem;
+        font-weight: normal;
+    }
+
+    .pricing .box-container .box h3{
+        color: aliceblue;
+        background: var(--coral);
+        font-size: 3rem;
+        padding: 1.5rem 0;
+        margin: 1rem 0;
+
+    }
+    .pricing .box-container .box ul{
+        list-style: none;
+        padding: 1rem 0;
+        border-bottom: .1rem solid var(--coral);
+
+    }
+    .pricing .box-container .box ul li{
+
+        padding: 1rem 0;
+        font-size: 1.7rem;
+        color: #666;
+    }
+
+    .pricing .box-container .box .btn{
+        margin-top:  2rem;
+    }
+
+   
+    .slider {
+        width: 100%;
+        overflow: hidden;
+      }
+  
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+  
+      .slide {
+        width: 100%;
+        flex: 0 0 auto;
+        text-align: center; 
+        padding: 20px; 
+        box-sizing: border-box; 
+      }
+  
+      .slide img {
+        max-width: 100%;
+        height: auto; 
+      }
+  
+      .slider-nav {
+        display: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+      }
+  
+      .slider-nav button {
+        cursor: pointer;
+        padding: 20px;
+        color: black;
+        display:inline-block;
+            padding:.7rem 3rem;
+            margin-top:1rem;
+            border-radius:5rem;
+            background:#eeb0af;
+            color: #272d3b;
+          
+            font-size:1.7rem;
+            
+      }
+
+
+
+    .review .box-container{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+     
+     }
+   
+     .review .box-container .box{
+        margin: 1rem;
+        border-radius: 5rem;
+        text-align: center;
+        background: rgba(237, 23,111,.05);
+        padding: 1rem;
+        flex: 1 1 30rem ;
+        box-shadow: 0.5rem 1rem var(--black);
+        border:#eeb0af
+
+     }
+
+     .review .box-container .box img{
+
+         height:10rem;
+         width:10rem;
+         border-radius: 50%;
+     
+     }
+     .review .box-container .box P{
+     padding:1rem 0;
+     line-height: 1.8;
+     color:var(--red);
+     font-size:1.5rem;
+     
+     }
+
+     .review .box-container .box h3{
+         padding-bottom: .5rem;
+         color:var(--black);
+         font-size:2.2rem;
+         
+         }
+         
+    .review .box-container .box .stars i{
+        color:var(--orange);
+        font-size:1.7rem;
+         }
+
+         .accordion {
+            background-color: #eee;
+            color: #000;
+            cursor: pointer;
+            padding: 22px;
+          width:100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 25px;
+            transition: 0.4s;
+          }
+          
+          .active, .accordion:hover {
+            background-color:#f69c9a;
+          }
+          
+          .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+          }
+          
+          .active:after {
+            content: "\2212";
+          }
+          
+          .panel {
+            padding: 0 25px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          font-size: 16px;
+          }
+         
+    
