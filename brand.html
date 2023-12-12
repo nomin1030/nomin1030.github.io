@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="brand.css">
+    <style>
+    
+        .header{
+        position: fixed;
+        top:0; left:0; right: 0;
+        background: white;
+        padding: 2rem 9%;
+        display: flex;
+        align-items: right;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        align-items: center;
+    }
+    .header .logo{
+        font-size:2.5rem;
+        color: #333;
+        font-weight: bolder;
+    }
+    .header .logo span{
+        color:var(--pink);
+    }
+    .header .navbar a{
+    
+        font-size: 1.7rem;
+        padding: 0 1.5rem;
+        color:#666;
+    }
+    .header .navbar a:hover{
+        color:var(--pink);
+        color:pink;
+    }
+    .header .icons a{
+        font-size: 2.5rem;
+        color:#333;
+        margin-left: 1.5rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        text-align: center;
+        cursor: pointer;
+        background: #eee;
+    }
+    .header .icons a:hover{
+        background: var(--pink);
+        color: rgb(237, 158, 171);
+
+        
+    }
+    .header .icons div{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        background: #eee;
+        color: var(--black);
+        font-size: 2rem;
+        margin-left: .3rem;
+        text-align: center;
+        cursor: pointer;
+    }
+  
+    .header .icons div:hover{
+        background: var(--pink);
+        color:rgb(237, 158, 171);
+    }
+    .header .search-form{
+        position:absolute;
+        top: 110%; right: -110%;
+        width:50rem;
+        height: 5rem;
+        background: #fff;
+        border-radius: .5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        box-shadow: var(--box-shadow);
+    }
+    .header .search-form.active{
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .search-form input{
+        height: 100%;
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color:var(--black);
+        padding: 0 1.5rem;
+    
+    
+    }
+    .header .search-form label{
+        font-size: 2.2rem;
+        padding-right: 1.5rem;
+        color: var(--black);
+        cursor: pointer;
+    }
+    .header .search-form label:hover{
+        color: var(--pink);
+    }
+    .header .shopping-cart{
+    position: absolute;
+    top:110%; right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow:var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+}
+.header .shopping-cart.active{
+right: 2rem;
+transition: .4s linear;
+}
+
+
+.header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .shopping-cart .box img{
+    height: 10rem;
+}
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 3rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .shopping-cart .box .fa-trash:hover{
+    color: var(--black);
+}
+.header .shopping-cart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .shopping-cart .box .content span{
+    color:var(--pink);
+    font-size: 1.6rem;
+}
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+.header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+.header .heart{
+    position: absolute;
+    top: 110%; right: -110%;
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+    text-align: center;
+}
+.header .heart.active{
+    right: 2rem;
+    transition: .4s linear;
+
+}
+.header .heart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .heart .box img{
+    height: 10rem;
+}
+.header .heart .box .fa-heart{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 2rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .heart .box .fa-heart:hover{
+    color: var(--pink);
+}
+.header .heart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .heart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+
+}
+
+
+    </style>
+</head>
+<header class="header">
+    
+    <a href="home.html" class="logo">YOURSKIN<span>.</span></a>
+    <nav class="navbar">
+        <a href="home.html">홈</a>
+        <a href="about.html">소개</a>
+        <a href="brand.html">브랜드</a>
+        <a href="sale.html">세일</a>
+        <a href="card1.html">기프트 카드</a>
+        <a href="beautybox.html">뷰티 박스</a>
+        <a href="mask.html">마스크 키트</a>
+    </nav>
+  
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-heart" id="heart-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <a href="login.html" class="fas fa-user" id="login-btn"></a>
+    </div>
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="kl2.jpeg" alt="">
+            <div class="content">
+                <h3>Klairs Set</h3>
+                <span class="price">30,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="foun.jpeg" alt="">
+            <div class="content">
+                <h3>Laniege foundation</h3>
+                <span class="price">50,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="mask1.jpeg" alt="">
+            <div class="content">
+                <h3>Cosrx Mask</h3>
+                <span class="price">20,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="total"> Total:82,000w</div>
+        <a href="login.html" class="btn">checkout</a>
+    </div>
+
+   
+    <div class="heart">
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="vitamin.jpeg" alt="">
+            <div class="content">
+                <h3>Klairs Vitamin </h3>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="espoir.jpeg" alt="">
+            <div class="content">
+                <h3>Espoir Cusion</h3>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="foun.jpeg" alt="">
+            <div class="content">
+                <h3>Laneige foundation</h3>
+            </div>
+        </div>
+        <a href="login.html" class="btn">checkout</a>
+    </div>
+  </header>
+  
+<body>
+
+<section class="gallery" id="gallery">
+    <div class="box-container">
+
+        <div class="box">
+            <img decoding="async" src="brandimage1.jpeg" >
+            <div class="content">
+                <h3>KLAIRS</h3>
+                <p>Simple but enough</p>
+            </div>
+        </div>
+    </section>
+<section class="shop" id="shop">
+    <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+    <div class="box-container">
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs1img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>공유하기 메이직&베스트 기초 3종 세트</h3>
+                <div class="price">54700원<span>88800원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs2img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>리치 모이스트 수딩 세럼</h3>
+                <div class="price">20900원<span>28800원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs3img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>올 데이 에어리 선스크림</h3>
+                <div class="price">19500원<span>26300원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs4img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>펀더멘탈 워터리 오일 드롭</h3>
+                <div class="price">31900원<span>38800원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs5img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>펀더멘탈 아이 어웨이크닝 젤</h3>
+                <div class="price">25500원<span>31300원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="img">
+                <img decoding="async" src="klairs6img.jpeg">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>리치 모이스트 포밍 클렌저</h3>
+                <div class="price">16500원<span>22500원</span></div>
+                <a href="login.html" class="btn">add to cart</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="gallery" id="gallery">
+    <div class="box-container">
+
+        <div class="box">
+            <img decoding="async" src="brandimage2.jpeg">
+            <div class="content">
+                <h3>COSRX</h3>
+                <p>We have the best partners</p>
+            </div>
+        </div>
+    </section>
+    <section class="shop" id="shop">
+        <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+        <div class="box-container">
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx1img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>아하 7 화이트헤드 파워 리퀴드</h3>
+                    <div class="price">22500원<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx2img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>'모공패드' 포어리스 패드 70매</h3>
+                    <div class="price">22500원<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx3img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>더 레티놀 크림+오일 듀오 세트</h3>
+                    <div class="price">50000원<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx4img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>하이드리움 모이스처 클렌저</h3>
+                    <div class="price">13000원<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx5img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>퓨어 핏 시카 토너 150ml</h3>
+                    <div class="price">22000<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="img">
+                    <img decoding="async" src="cosrx6img.jpeg">
+                    <div class="icons">
+                        <a href="#" class="fas fa-eye"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>AC 컬렉션 스팟 클리어링 세럼</h3>
+                    <div class="price">25000원<span></span></div>
+                    <a href="login.html" class="btn">add to cart</a>
+                </div>
+            </div>
+    
+        </div>
+    </section> 
+    <section class="gallery" id="gallery">
+        <div class="box-container">
+    
+            <div class="box">
+                <img decoding="async" src="brandimage3.jpeg">
+                <div class="content">
+                    <h3>LANEIGE</h3>
+                    <p>We have the best partners</p>
+                </div>
+            </div>
+        </section>
+        <section class="shop" id="shop">
+            <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+            <div class="box-container">
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige1img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>네오 에센셜 블러링 피니시 파우더</h3>
+                        <div class="price">21000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige2img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>크림 스킨 세라펩타이드™ 리파이너</h3>
+                        <div class="price">33000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige3img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>래디언-C 크림</h3>
+                        <div class="price">32000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige4img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>워터뱅크 블루 히알루로닉 크림
+                            중‧건성용</h3>
+                        <div class="price">42000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige5img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>립 슬리핑 마스크 EX</h3>
+                        <div class="price">22000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <div class="img">
+                        <img decoding="async" src="laneige6img.jpeg">
+                        <div class="icons">
+                            <a href="#" class="fas fa-eye"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>퍼펙트 리뉴 쓰리엑스 시그니쳐 세럼</h3>
+                        <div class="price">85000원<span></span></div>
+                        <a href="login.html" class="btn">add to cart</a>
+                    </div>
+                </div>
+        
+            </div>
+        </section>    
+        <section class="gallery" id="gallery">
+            <div class="box-container">
+        
+                <div class="box">
+                    <img decoding="async" src="brandimage4.jpeg">
+                    <div class="content">
+                        <h3>MAYCOOP</h3>
+                        <p>We have the best partners</p>
+                    </div>
+                </div>
+            </section>
+            <section class="shop" id="shop">
+                <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+                <div class="box-container">
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop1img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 데일리케어 에디션</h3>
+                            <div class="price">59000원<span>154000원</span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop2img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 오일 앰플 30ml </h3>
+                            <div class="price">58000원<span></span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop3img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 컨센트라 나이트크림 50ml </h3>
+                            <div class="price">58000원<span></span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop4img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 크림 스킨 올인원 110ml </h3>
+                            <div class="price">35000원<span></span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop5img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 모닝 듀 80ml</h3>
+                            <div class="price">22000원<span></span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <div class="img">
+                            <img decoding="async" src="maycoop6img.jpeg">
+                            <div class="icons">
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>로우 스크럽 클렌저 110ml </h3>
+                            <div class="price">22000원<span></span></div>
+                            <a href="login.html" class="btn">add to cart</a>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>    
+            <section class="gallery" id="gallery">
+                <div class="box-container">
+            
+                    <div class="box">
+                        <img decoding="async" src="brandimage5.jpeg">
+                        <div class="content">
+                            <h3>ROM&ND</h3>
+                            <p>We have the best partners</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="shop" id="shop">
+                    <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+                    <div class="box-container">
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand1img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 쥬시 래스팅 틴트</h3>
+                                <div class="price">8900원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand2img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 립 매터</h3>
+                                <div class="price">8900원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand3img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 베러 댄 쉐입</h3>
+                                <div class="price">9900원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand4img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 블룸 인 커버핏 쿠션</h3>
+                                <div class="price">13900원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand5img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 블룸 인 커버핏 쿠션</h3>
+                                <div class="price">9280원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                        <div class="box">
+                            <div class="img">
+                                <img decoding="async" src="romand6img.jpeg">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-eye"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-share"></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>롬앤 백미 톤업 크림</h3>
+                                <div class="price">6900원<span></span></div>
+                                <a href="login.html" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                
+                    </div>
+                </section>    
+                <section class="gallery" id="gallery">
+                    <div class="box-container">
+                
+                        <div class="box">
+                            <img decoding="async" src="brandimage6.jpeg">
+                            <div class="content">
+                                <h3>ESPOIR</h3>
+                                <p>We have the best partners</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="shop" id="shop">
+                        <h1 class="heading">OUR<span>PRODUCTS</span></h1>
+                        <div class="box-container">
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir1img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>비 벨벳 플루이드 파운데이션</h3>
+                                    <div class="price">37000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir2img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>노웨어 글로우 립밤</h3>
+                                    <div class="price">22000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir3img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>리얼 아이 로지 비비 팔레트</h3>
+                                    <div class="price">34000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir4img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>NEW 워터 스플래쉬 선크림 세라마이드 SPF50+ PA++++</h3>
+                                    <div class="price">22000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir5img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>프로테일러 비벨벳 커버 쿠션 뉴클래스</h3>
+                                    <div class="price">38000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                            <div class="box">
+                                <div class="img">
+                                    <img decoding="async" src="espoir6img.jpeg">
+                                    <div class="icons">
+                                        <a href="#" class="fas fa-eye"></a>
+                                        <a href="#" class="fas fa-heart"></a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>리얼 치크 업</h3>
+                                    <div class="price">19000원<span></span></div>
+                                    <a href="login.html" class="btn">add to cart</a>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </section>                                
+ <script src="main.js" defer data-deferred="1"></script> 
+ <script src="script.js"></script>
+</body>
+</html>

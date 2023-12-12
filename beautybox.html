@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style2.css">
+    <title>beauty box</title>  
+    <style>
+    
+      .header{
+      position: fixed;
+      top:0; left:0; right: 0;
+      background: white;
+      padding: 2rem 9%;
+      display: flex;
+      align-items: right;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: var(--box-shadow);
+      align-items: center;
+  }
+  .header .logo{
+      font-size:2.5rem;
+      color: #333;
+      font-weight: bolder;
+  }
+  .header .logo span{
+      color:var(--pink);
+  }
+  .header .navbar a{
+  
+      font-size: 1.7rem;
+      padding: 0 1.5rem;
+      color:#666;
+  }
+  .header .navbar a:hover{
+      color:var(--pink);
+      color:pink;
+  }
+  .header .icons a{
+      font-size: 2.5rem;
+      color:#333;
+      margin-left: 1.5rem;
+      height: 4.5rem;
+      width: 4.5rem;
+      line-height: 4.5rem;
+      border-radius: .5rem;
+      text-align: center;
+      cursor: pointer;
+      background: #eee;
+  }
+  .header .icons a:hover{
+      background: var(--pink);
+      color: rgb(237, 158, 171);
+
+      
+  }
+  .header .icons div{
+      height: 4.5rem;
+      width: 4.5rem;
+      line-height: 4.5rem;
+      border-radius: .5rem;
+      background: #eee;
+      color: var(--black);
+      font-size: 2rem;
+      margin-left: .3rem;
+      text-align: center;
+      cursor: pointer;
+  }
+
+  .header .icons div:hover{
+      background: var(--pink);
+      color:rgb(237, 158, 171);
+  }
+  .header .search-form{
+      position:absolute;
+      top: 110%; right: -110%;
+      width:50rem;
+      height: 5rem;
+      background: #fff;
+      border-radius: .5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      box-shadow: var(--box-shadow);
+  }
+  .header .search-form.active{
+      right: 2rem;
+      transition: .4s linear;
+  }
+  .header .search-form input{
+      height: 100%;
+      width: 100%;
+      background: none;
+      text-transform: none;
+      font-size: 1.6rem;
+      color:var(--black);
+      padding: 0 1.5rem;
+  
+  
+  }
+  .header .search-form label{
+      font-size: 2.2rem;
+      padding-right: 1.5rem;
+      color: var(--black);
+      cursor: pointer;
+  }
+  .header .search-form label:hover{
+      color: var(--pink);
+  }
+  .header .shopping-cart{
+    position: absolute;
+    top:110%; right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow:var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+}
+.header .shopping-cart.active{
+right: 2rem;
+transition: .4s linear;
+}
+
+
+.header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .shopping-cart .box img{
+    height: 10rem;
+}
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 3rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .shopping-cart .box .fa-trash:hover{
+    color: var(--black);
+}
+.header .shopping-cart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .shopping-cart .box .content span{
+    color:var(--pink);
+    font-size: 1.6rem;
+}
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+.header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+.header .heart{
+    position: absolute;
+    top: 110%; right: -110%;
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+    text-align: center;
+}
+.header .heart.active{
+    right: 2rem;
+    transition: .4s linear;
+
+}
+.header .heart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .heart .box img{
+    height: 10rem;
+}
+.header .heart .box .fa-heart{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 2rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .heart .box .fa-heart:hover{
+    color: var(--pink);
+}
+.header .heart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .heart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+
+}
+
+  </style>
+</head>
+<header class="header">
+    
+  <a href="home.html" class="logo">YOURSKIN<span>.</span></a>
+  <nav class="navbar">
+      <a href="home.html">홈</a>
+      <a href="about.html">소개</a>
+      <a href="brand.html">브랜드</a>
+      <a href="sale.html">세일</a>
+      <a href="card1.html">기프트 카드</a>
+      <a href="beautybox.html">뷰티 박스</a>
+      <a href="mask.html">마스크 키트</a>
+  </nav>
+
+  <div class="icons">
+      <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-heart" id="heart-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      <a href="login.html" class="fas fa-user" id="login-btn"></a>
+  </div>
+  <form action="" class="search-form">
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box" class="fas fa-search"></label>
+  </form>
+  <div class="shopping-cart">
+    <div class="box">
+        <i class="fas fa-trash"></i>
+        <img src="kl2.jpeg" alt="">
+        <div class="content">
+            <h3>Klairs Set</h3>
+            <span class="price">30,000w/-</span>
+            <span class="quantity">qty:1</span>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-trash"></i>
+        <img src="foun.jpeg" alt="">
+        <div class="content">
+            <h3>Laniege foundation</h3>
+            <span class="price">50,000w/-</span>
+            <span class="quantity">qty:1</span>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-trash"></i>
+        <img src="mask1.jpeg" alt="">
+        <div class="content">
+            <h3>Cosrx Mask</h3>
+            <span class="price">20,000w/-</span>
+            <span class="quantity">qty:1</span>
+        </div>
+    </div>
+    <div class="total"> Total:82,000w</div>
+    <a href="login.html" class="btn">checkout</a>
+</div>
+
+
+<div class="heart">
+    <div class="box">
+        <i class="fas fa-heart"></i>
+        <img src="vitamin.jpeg" alt="">
+        <div class="content">
+            <h3>Klairs Vitamin </h3>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-heart"></i>
+        <img src="espoir.jpeg" alt="">
+        <div class="content">
+            <h3>Espoir Cusion</h3>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-heart"></i>
+        <img src="foun.jpeg" alt="">
+        <div class="content">
+            <h3>Laneige foundation</h3>
+        </div>
+    </div>
+    <a href="login.html" class="btn">checkout</a>
+</div>
+</header>
+ 
+<body>
+
+<div>
+    <img src="slider.gif" alt="beauty_box" width="100%" height="100%" class="img-responsive" style="display:inline">
+</div>
+
+<section class="about" id="about">
+    <h1 class="heading">뷰티박스를 선택하는 이유는 무엇인가요?</h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="icon_1.png" alt="">
+            <h3>보장된 제품</h3>
+            <p>   우리는 승인된 브랜드 및 회사와만 협력합니다.              </p>
+        </div>
+        <div class="box">
+            <img src="icon_2.png" alt="">
+            <h3>간편한 등록</h3>
+            <p>   모든 정보를 한번만 등록하시면 매월 자동으로 청구됩니다.    </p>
+        </div>
+        <div class="box">
+            <img src="icon_3.png" alt="">
+            <h3>효과적인 서비스</h3>
+            <p>   월 39,000 가격으로 5개 제품을 무료 배송할 수 있습니다.    </p>
+        </div>
+        <div class="box">
+            <img src="icon_4.png" alt="">
+            <h3>현명한 선택</h3>
+            <p>   관심 있는 제품을 사용해보시고 구매 여부를 결정하세요.      </p>
+        </div>
+</div>
+</section>
+
+<section class="membership" id="membership">
+    <div class="content">
+    <h3>#BEAUTYBOX를 구독하는 방법은 무엇인가요?</h3>
+    <p>이번 달 #마스크킷에 포함된 마스크 5종의 총 가격은 47,600원 입니다. 하지만 서비스에 등록하면 이  상자를 21,000원에 원하는 곳 어디든 무료로 배송받을 수 있습니다.</p>
+    
+    </div>
+    <div class="box-container">
+    
+        <div class="box">
+            <img src="number1.png" alt="">
+            <h3>step</h3>
+            <p>우리는 승인된 브랜드 및 회사와만 협력합니다.</p>
+        </div>
+        <div class="box">
+            <img src="number2.png" alt="">
+            <h3>step</h3>
+            <p>한번만 등록하시면 매월 자동으로 청구됩니다.</p>
+            
+        </div>
+        <div class="box">
+            <img src="number3.png" alt="">
+            <h3>step</h3>
+            <p>저렴한 가격으로 5개 제품을 구매 가능.</p>
+        </div>
+       
+</div>
+<div><a href="#" class="btn">가입하기</a></div>
+</section>
+<div>
+    <img src="beauty_box2.jpg" alt="beauty_box" width="100%" height="100%" class="img-responsive" style="display:inline">
+</div>
+
+<section class="pricing" id="pricing">
+
+<h1 class="heading"> 박스 가격 계획 </h1>
+<div class="box-container">
+    <div class="box">
+        <div class="price"><span>원</span>1<span>/개월</span></div>
+        <h3>basic</h3>
+         <ul>
+         <li> 50.000 원</li>
+         <li>신규 사용자의 경우 </li>
+         <li> 언제든지 취소 가능 </li>
+         <li> 가장 유연한 용어 </li>
+     </ul>
+     <a href="#" class="btn">shopping cart</a>
+    </div>
+
+    <div class="box">
+        <div class="price"><span>원</span>12<span>/개월</span></div>
+        <h3>premium</h3>
+         <ul>
+         <li> 38.000 원 </li>
+         <li> 스킨케어를 좋아하는 분들을 위한 </li>
+         <li> 132,000원 절감 </li>
+         <li> 가장 경제적인 조건</li>
+     </ul>
+     <a href="#" class="btn">shopping cart</a>
+    </div>
+
+    <div class="box">
+        <div class="price"><span>원</span>6<span>/개월</span></div>
+        <h3>standart</h3>
+         <ul>
+         <li> 45.000 원 </li>
+         <li>충성고객을 위한 </li>
+         <li> 5,000ㅇ원 절약 </li>
+         <li> 가장 많이 찾는 제품 </li>
+     </ul>
+     <a href="#" class="btn">shopping cart</a>
+    </div>
+
+</div>
+</section>
+
+<section class="slide" id="slide">
+    <h1 class="heading">이번 달 #BEAUTYBOX에는 무엇이 들어있나요?</h1>
+    <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="product5.jpg" alt="Slide 1">
+            <h2 style="color: #fb72ab;">제품 1</h2>
+            <p style="font-size: 1.5rem;">ESPOIR Peach Skin Fitting Base 30ml SPF 41 PA++++ | 가볍게 부착되고 오래 지속되는 피치 컴플렉션 페이스 파운데이션 프라이머 | 피부 질감 교정 및 모공 커버 | 한국 메이크업.</p>
+           
+          </div>
+          <div class="slide">
+            <img src="product7.jpg" alt="Slide 2">
+            <h2 style="color: #fb72ab;" >제품 2</h2>
+            <p style="font-size: 1.5rem;" > 페이스용피부타입 : 모든피부용자외선차단지수 : 16PA지수 : PA++주요제품특징 : 지속력, 밀착력, 커버력세부제품특징 : 자연스러움, 부드러운 발림, 매트함, 다크닝없음, 자외선차. </p>
+            
+          </div>
+          <div class="slide">6
+            <img src="product6.jpg" alt="Slide 3">
+            <h2 style="color: #fb72ab;" >제품 3</h2>
+            <p style="font-size: 1.5rem;" >페이스용피부타입 : 건성, 민감성사용시간 : 낮, 밤주요제품특징 : 촉촉함(수분공급), 저자극.</p>
+           
+          </div>
+        </div>
+      <div class="slider-nav">
+        <button onclick="prevSlide()"><-</button>
+        <button onclick="nextSlide()">-></button>
+      </div>
+
+</section>
+
+<section class="review" id="review">
+
+    <h1 class="heading">고객  <span> 리뷰 </span></h1>
+ <div class="box-container">
+        <div class="box">
+            <img src="customer1.jpg" alt="">
+            <p>당신의 성장을 도와주는 서비스입니다. 닥터슈라클 - 티트리 퓨리파인 70 토너는 피부에 수분과 밸런스를 공급하여 다음 제품을 아름답게 준비해줍니다. 피부에 가볍고 쾌적하며 안전한 느낌. 더 큰 것을 얻으십시오! 제 제품과 똑같네요...</p>
+            <h3>NOMIN</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>  
+            </div>
+        </div>
+        <div class="box">
+            <img src="customer2.jpg" alt="">
+            <p>매달 무슨 일이 일어날지 예측하는 매우 흥미로운 서비스입니다. 카드를 연결하고 바로 출금하기만 하면 되기 때문에 간편하기도 합니다. 항상 큰 제품을 놓치는 저에게는 딱 맞는 서비스입니다. 꼭 필요한 제품만 구입하면 절약에 도움이 됩니다.</p>
+            <h3>ZULAA</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>  
+            </div>
+        </div>
+        <div class="box">
+            <img src="customer3.jpg" alt="">
+            <p>저는 지금 3개월째 여드름약을 복용하고 있습니다. 약의 부작용으로 피부가 매우 건조해집니다. 우진의 연약한 피부는 더욱 예민해졌고, 마치 벗겨진 듯한 느낌이 들었습니다. 5월 뷰티박스가 마치 나를 위한 것인양 찾아왔습니다.</p>
+            <h3>TUGULDUR</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>  
+            </div>
+        </div>
+    </div>
+</div>
+</section> 
+
+<section>
+    <h1 class="heading">자주하는 질문</h1>
+           
+   <button class="accordion">자세한 서비스 약관</button>
+   <div class="panel">
+     <p>유어스킨은 #뷰티박스 서비스를 자동 결제 또는 구독 방식으로 제공합니다. 여기에는 자동 갱신 및 월별 청구가 포함된 1개월 서비스 기간, 선택한 기간 동안 취소 없이 사용할 수 있는 자동 월별 청구가 포함된 6개월 및 12개월 기간이 포함됩니다.</p>
+   </div>
+   
+   <button class="accordion">#뷰티박스 사용자가 되는 방법은 무엇입니까?</button>
+   <div class="panel">
+     <p>
+        등록된 이메일 주소와 비밀번호를 입력하여 로그인하세요.
+        페이지 상단의 #beautybox 버튼을 클릭하고, 귀하에게 적합한 서비스 약관을 선택한 후 구독 버튼을 클릭하세요.
+        카드추가 버튼을 클릭하시면 자동결제 카드 등록 페이지로 이동합니다. 오른쪽 상단의 카드 추가 버튼을 클릭하여 결제카드 정보를 입력하세요. 이 섹션에서는 결제 카드 정보를 정확하게 입력하고 등록 버튼을 클릭합니다.
+        카드등록 옆에 있는 확인 버튼을 클릭하시면, 총 금액이 10₮ 미만인 거래가 귀하의 계좌에서 출금됩니다. 이는 본인의 카드인지 확인 및 확인하기 위한 것이며, 해당 금액을 환불해 드립니다. 계좌 명세서에서 금액을 확인하고 화면 창에 복사하여 붙여넣은 후 확인 버튼을 누르면 카드 등록이 성공적으로 완료됩니다.
+        #beautybox 버튼을 눌러 들어가신 후, 서비스 약관을 선택하신 후 구독 버튼을 누르시면, 연동하신 카드정보가 노출됩니다.
+        결제카드를 선택하고, 상세 이용약관을 읽어본 후 동의한 후 카드연결 버튼을 클릭하세요.
+        성공 메시지와 함께 #beautybox 서비스가 활성화되었습니다.
+        등록된 결제 카드 및 #뷰티박스 서비스의 세부정보는 고객 섹션의 내 지갑 및 내 구독 메뉴에서 확인할 수 있습니다.</p>
+   </div>
+   
+   <button class="accordion">#뷰티박스은 언제 배송되나요?</button>
+   <div class="panel">
+     <p>#뷰티박스은 매월 28일부터 31일 사이에 등록된 주소로 배송됩니다. 현지 배송은 몽고 포스트 일정에 따라 1~3일 정도 지연될 수 있는 점 참고 부탁드립니다.</p>
+   </div>
+   <button class="accordion">배송 주소를 어떻게 변경하나요?</button>
+   <div class="panel">
+     <p>구독에 로그인하고 활성 서비스 끝에 있는 빨간색 버튼을 클릭하여 새 주소를 입력할 수 있습니다. #마스크 는 매달 25일부터 보관 가능하니 그전에 주소를 변경해주세요.</p>
+   </div>
+   <button class="accordion">결제 금액은 언제 인출되나요?</button>
+   <div class="panel">
+     <p>#뷰티박스 서비스를 처음 활성화하면 첫 달 요금이 즉시 청구됩니다. 단, 다음 달부터는 매월 1일부터 19일 사이에 결제가 이루어집니다. 해당 기간 동안 반복적으로 탈퇴 시도가 이루어지며, 실패할 경우 19일 서비스가 취소되오니 참고하시기 바랍니다.
+   
+   출금 실패 사유에는 3가지 유형이 있습니다. 여기에는 다음이 포함됩니다.
+   
+   계좌 잔액 부족 - 19일 이전에 계좌에 입금
+   은행에서 인출이 허용되지 않음 - 은행에 문의하세요
+   카드 만료 - 이 경우 현재 카드를 교체할 수 없으므로 다시 가입하시기 바랍니다.</p>
+   </div>
+   
+   <button class="accordion"> 이번달 #뷰티박스만 받을 수 있나요?</button>
+   <div class="panel">
+     <p>1개월 구독 서비스를 선택하더라도 취소를 요청하지 않는 한 매달 요금이 청구됩니다. 해당 달에만 #뷰티박스 를 받고 다시 받지 않으려면 1개월 동안 서비스를 활성화한 후 결제 금액을 차감한 후 서비스를 취소해야 합니다. 이렇게 하면 이번 달의 #뷰티박스가 배송되고 다음 달에는 요금이 청구되지 않습니다. 서비스를 취소하려면 여기를 클릭하세요. 
+   
+   </p>
+   </div>
+   <button class="accordion">서비스를 취소하는 방법은 무엇입니까?</button>
+   <div class="panel">
+     <p>취소하려는 서비스 뒤에 있는 취소 버튼을 클릭하면 언제든지 서비스를 취소할 수 있습니다. 월간 서비스 요금이 이미 청구된 경우 해당 달의 #뷰티박스가 배송되며 다음 달 서비스는 취소됩니다.</p>
+   </div>
+   </section>
+   
+
+
+
+
+
+
+
+
+<script>
+
+  // JavaScript for controlling the slider
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const slideWidth = document.querySelector('.slide').clientWidth;
+
+    currentSlide = index;
+    slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+    } else {
+      currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (currentSlide > 0) {
+      currentSlide--;
+    } else {
+      currentSlide = totalSlides - 1;
+    }
+
+    showSlide(currentSlide);
+  }
+
+
+
+
+
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    var prevExpandedPanel = null;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        if (prevExpandedPanel && this !== prevExpandedPanel) {  
+          prevExpandedPanel.classList.toggle("active");
+          prevExpandedPanel.nextElementSibling.style.maxHeight = null;
+        }
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+        prevExpandedPanel = this;
+      });
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper(".image-slider",{
+    effect: "coverflow", 
+    grabCursor: true, 
+    centeredSlides: true, 
+    slidesPerView: "auto", 
+    coverflowEffect: {
+     rotate: 0, 
+    stretch: 0, 
+    depth: 100, 
+    modifier: 2, 
+    slideShadows: true,
+    },
+    loop: true,
+    autoplay: {
+        delay:2000,
+    disableOnInteraction: false,},
+    
+    });
+    
+    </script>
+
+
+
+
+<script src="script.js"></script>
+</body>
+<script src="script.js"></script>
+</html>

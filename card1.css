@@ -1,0 +1,341 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar{
+    width:1rem;
+}
+html::-webkit-scrollbar-thumb{
+    background: #F08080;
+}
+section{
+    padding:3rem 9%;
+}
+span{
+    color:#F08080;
+}
+
+.heading{
+    text-align: center;
+    color: #222;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:1rem;
+    padding:1rem 3rem;
+    color:#222;
+    font-size:1.7rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+.btn:hover{
+    letter-spacing: .1rem;
+    background:#F08080;
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6dbf5, #f99bc7);
+    padding: 10px;
+}
+.card{
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    perspective: 1000px;
+   
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+   position: relative;
+   transition: transform 1s;
+   transform-style: preserve-3d;
+}
+.front, .back{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    background: url(gift11.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color:#fff;
+}
+
+.front2{
+    background: url(Gift2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color:rgb(14, 1, 5);
+}
+.front h2{
+    font-weight: 500;
+
+}
+.front p{
+    font-weight: #ccc;
+    font-size: 13px; 
+    
+}
+.front button{
+    width: 120px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+}
+.back{
+    background: #fff;
+    color: #333;
+    padding: 20px 20px;
+    transform: rotateY(180deg);
+}
+.back h1 {
+    font-size: 30px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.back h1 span {
+    font-weight: 400;
+}
+.back p {
+    font-size: 14px;
+}
+.back p span {
+    font-weight: 600;
+}
+.back img{
+    width: 300px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.row :hover{
+color: rgb(242, 87, 113);
+    
+}
+.col{
+    flex: 1;
+    text-align: center;
+    color:rgb(41, 23, 41);
+    font-size: 12px;
+    position: relative;
+}
+.col h2{
+    font-size: 20px;
+}
+.col::after{
+    content:'';
+    width: 1.5px;
+    height: 20px;
+    background: #7800ad;
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+.col:last-child::after{
+    display: none;
+}
+.col p{
+    margin-top: 5px;
+}
+.back button{
+    background: rgb(252, 130, 149);
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(120, 0, 173, 0.3);
+}
+.back a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.back a img {
+    width: 50%;
+}
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+
+
+
+.container2{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e3dbf6, #a99bf9);
+    padding: 10px;
+}
+.card{
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    perspective: 1000px;
+   
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+   position: relative;
+   transition: transform 1s;
+   transform-style: preserve-3d;
+}
+.front2, .back2{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front2 h2{
+    font-weight: 600;
+
+}
+.front2 p{
+    font-weight: #ccc;
+    font-size: 20px; 
+    
+}
+.front2 button{
+    width: 120px;
+    border: 1px solid #0a0101;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #0b0101;
+}
+.back2{
+    background: #fff;
+    color: #333;
+    padding: 20px 20px;
+    transform: rotateY(180deg);
+}
+.back2 h1 {
+    font-size: 30px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.back2 h1 span {
+    font-weight: 400;
+}
+.back2 p {
+    font-size: 14px;
+}
+.back2 p span {
+    font-weight: 600;
+}
+.back2 img{
+    width: 200px;
+}
+.row2{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.row2 :hover{
+    color: rgb(225, 106, 203);
+        
+    }
+.col2{
+    flex: 1;
+    text-align: center;
+    color:rgb(41, 23, 41);
+    font-size: 12px;
+    position: relative;
+}
+.col2 h2{
+    font-size: 20px;
+}
+.col2::after{
+    content:'';
+    width: 1.5px;
+    height: 20px;
+    background: #7800ad;
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+.col2:last-child::after{
+    display: none;
+}
+.col2 p{
+    margin-top: 5px;
+}
+.back2 button{
+    background: #7800ad;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(120, 0, 173, 0.3);
+}
+.back2 a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.back2 a img {
+    width: 50%;
+}
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}

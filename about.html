@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="about.css">
+    <title>about</title>  
+    <style>
+    
+        .header{
+        position: fixed;
+        top:0; left:0; right: 0;
+        background: white;
+        padding: 2rem 9%;
+        display: flex;
+        align-items: right;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        align-items: center;
+    }
+    .header .logo{
+        font-size:2.5rem;
+        color: #333;
+        font-weight: bolder;
+    }
+    .header .logo span{
+        color:var(--pink);
+    }
+    .header .navbar a{
+    
+        font-size: 1.7rem;
+        padding: 0 1.5rem;
+        color:#666;
+    }
+    .header .navbar a:hover{
+        color:var(--pink);
+        color:pink;
+    }
+    .header .icons a{
+        font-size: 2.5rem;
+        color:#333;
+        margin-left: 1.5rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        text-align: center;
+        cursor: pointer;
+        background: #eee;
+    }
+    .header .icons a:hover{
+        background: var(--pink);
+        color: rgb(237, 158, 171);
+
+        
+    }
+    .header .icons div{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        background: #eee;
+        color: var(--black);
+        font-size: 2rem;
+        margin-left: .3rem;
+        text-align: center;
+        cursor: pointer;
+    }
+  
+    .header .icons div:hover{
+        background: var(--pink);
+        color:rgb(237, 158, 171);
+    }
+    .header .search-form{
+        position:absolute;
+        top: 110%; right: -110%;
+        width:50rem;
+        height: 5rem;
+        background: #fff;
+        border-radius: .5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        box-shadow: var(--box-shadow);
+    }
+    .header .search-form.active{
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .search-form input{
+        height: 100%;
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color:var(--black);
+        padding: 0 1.5rem;
+    
+    
+    }
+    .header .search-form label{
+        font-size: 2.2rem;
+        padding-right: 1.5rem;
+        color: var(--black);
+        cursor: pointer;
+    }
+    .header .search-form label:hover{
+        color: var(--pink);
+    }
+    .header .shopping-cart{
+    position: absolute;
+    top:110%; right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow:var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+}
+.header .shopping-cart.active{
+right: 2rem;
+transition: .4s linear;
+}
+
+
+.header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .shopping-cart .box img{
+    height: 10rem;
+}
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 3rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .shopping-cart .box .fa-trash:hover{
+    color: var(--black);
+}
+.header .shopping-cart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .shopping-cart .box .content span{
+    color:var(--pink);
+    font-size: 1.6rem;
+}
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+.header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+.header .heart{
+    position: absolute;
+    top: 110%; right: -110%;
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+    text-align: center;
+}
+.header .heart.active{
+    right: 2rem;
+    transition: .4s linear;
+
+}
+.header .heart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .heart .box img{
+    height: 10rem;
+}
+.header .heart .box .fa-heart{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right: 2rem;
+    cursor: pointer;
+    color: var(--pink);
+    transform: translateY(-50%);
+
+}
+.header .heart .box .fa-heart:hover{
+    color: var(--pink);
+}
+.header .heart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .heart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+
+}
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+}
+.footer .box-container .box{
+    flex: 1 1 25rem;
+}
+.footer .box-container .box h3{
+    color: #333;
+    font-size: 1.5rem;
+    padding:1rem 0;
+}
+.footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 1rem;
+    padding:1rem 0;
+}
+.footer .box-container .box a:hover{
+    color:var(--pink);
+    text-decoration: underline;
+}
+.footer .box-container .box img{
+    height: 15%;
+    width: 20%;
+    margin: 2%;
+}
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgb(0, 0, 0,rgb(0, 0, 0,.1));
+}
+.footer .credit span{
+    color: var(--red);
+}
+.footer .box-container .box .share{
+    font-size: 2rem;
+    margin: 0 .5rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 3.5rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    border: .2rem solid #fff;
+}
+.footer .box-container .box .share h3{
+    color: #333;
+    font-size: 2.5rem;
+    padding:1rem 0;
+}
+.footer .box-container .box h3 i{
+    color: var(--pink);
+}
+.footer .box-container .box a{
+    display: block;
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+.footer .box-container .box a i{
+    color: var(--pink);
+    padding-right: .5rem;
+
+}
+.footer .box-container .box a:hover i{
+    color: var(--pink);
+    padding-left: 2rem;
+
+
+}
+
+
+    </style>
+</head>
+<header class="header">
+    
+    <a href="home.html" class="logo">YOURSKIN<span>.</span></a>
+    <nav class="navbar">
+        <a href="home.html">홈</a>
+        <a href="about.html">소개</a>
+        <a href="brand.html">브랜드</a>
+        <a href="sale.html">세일</a>
+        <a href="card.html">기프트 카드</a>
+        <a href="beautybox.html">뷰티 박스</a>
+        <a href="mask.html">마스크 키트</a>
+    </nav>
+  
+    <div class="icons">
+
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-heart" id="heart-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <a href="login.html" class="fas fa-user" id="login-btn"></a>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+    <form action="login.html" class="login-form">
+        
+    </form>
+
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="kl2.jpeg" alt="">
+            <div class="content">
+                <h3>Klairs Set</h3>
+                <span class="price">30,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="foun.jpeg" alt="">
+            <div class="content">
+                <h3>Laniege foundation</h3>
+                <span class="price">50,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="mask1.jpeg" alt="">
+            <div class="content">
+                <h3>Cosrx Mask</h3>
+                <span class="price">20,000w/-</span>
+                <span class="quantity">qty:1</span>
+            </div>
+        </div>
+        <div class="total"> Total:82,000w</div>
+        <a href="login.html" class="btn">checkout</a>
+    </div>
+
+   
+    <div class="heart">
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="vitamin.jpeg" alt="">
+            <div class="content">
+                <h3>Klairs Vitamin </h3>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="espoir.jpeg" alt="">
+            <div class="content">
+                <h3>Espoir Cusion</h3>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-heart"></i>
+            <img src="foun.jpeg" alt="">
+            <div class="content">
+                <h3>Laneige foundation</h3>
+            </div>
+        </div>
+        <a href="login.html" class="btn">checkout</a>
+    </div>
+  </header>
+  
+<body>
+
+  <section class="about" id="about" >
+    <div class="content">
+        <h3>YOURSKIN</h3>
+        <p> 우리는 6개 이상의 최고 스킨케어 브랜드의 제품과 글로벌 시장에서 제공되는 최고의 혁신적인 서비스를 다양한 채널을 통해 고객에게 제공하고 있으며, 충성도 높은 고객의 피드백을 바탕으로 지속적으로 업데이트 및 확장하고 있다. </p>
+    </div>
+  </section> 
+<section>
+<section class="long" id="long">
+    <h1 class="heading"><span>안녕하세요!</span>yourskin입니다.</h1>
+    <div class="row">
+        <div class="image">
+            <img src="Gift2.jpg" alt="">
+        </div>
+        <div class="content">
+            <h3>매캐업, 스킨케어, 헤어, 네일</h3>
+            <p>우리 여자들은 항상 매일매일 멋지게 살기 위해 이 분야들에 대해 관심이 많죠. 먼저 매캐업은 다양한 제품들을 이용해 얼굴을 화사하게 만드는 것을 말해요. 자신에게 맞는 제품과 좋은 테크닉으로 자신만의 분위기를 연출해볼까요?
+
+                두 번째로, 스킨케어는 자신의 피부 상태를 관리하기 위한 필수 분야이다. 다양한 피부타입과 피부고민에 맞는 제품과 방법으로 시간은 거뜬히 지내면서 자신의 피부를 관리해보세요!
+                
+                그리고 헤어는 우리 여자들에게 가장 중요한 분야 중 하나다.</p>
+        </div>
+    </div>
+</section>
+<section class="end" id="end" >
+    <div class="content">
+        <h3>우리 이념은</h3>
+        <p> 전자상거래는 제품 선택, 다운로드, 등록, 데이터 입력, 주문, 결제, 배송, 피드백 및 정기적인 개선의 복잡한 시스템을 기반으로 합니다. 이 모든 단계와 활동을 원활하게 유지하는 비결은 여성의 관리 스타일, 즉 시스템을 방해하는 작은 문제까지 모두 파악하고 해결하는 습관이다. </p>
+    </div>
+  </section> 
+<section>
+    <script src="script.js"></script>
+</body>
+<script src="script.js"></script>
+<section class="footer">
+    <div class="box-container">
+      <div class="box">
+          <h3>Yourskin</h3>
+          <a href="about.html" class="links"> <i class="fas fa-arrow-right"></i>Ourstory</a>
+          <a href="brand.html" class="links"> <i class="fas fa-arrow-right"></i>Brands</a>
+          <a href="" class="links"> <i class="fas fa-arrow-right"></i>Store location</a>
+          <a href="card1.html" class="links"> <i class="fas fa-arrow-right"></i>Gift card</a>
+          <a href="beautybox.html" class="links"> <i class="fas fa-arrow-right"></i>BeautyBox</a>
+          <a href="mask.html" class="links"> <i class="fas fa-arrow-right"></i>Maskit</a>
+      </div>
+  
+      <div class="box">
+          <h3>Helps</h3>
+          <a href="#" class="links"> <i class="fas fa-arrow-right"></i>Return</a>
+          <a href="#" class="links"> <i class="fas fa-arrow-right"></i>Exchange</a>
+      </div>
+      <div class="box">
+          <h3>Contact info</h3>
+          <a href="#" class="links"> <i class="fas fa-phone"></i>+976 89780798</a>
+          <a href="#" class="links"> <i class="fas fa-envelope"></i>Yourskin@gmail.com</a>
+          <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i>Mongolia</a>
+          <img src="khan.png" alt="">
+          <img src="socialpay.png" alt="">
+          <img src="tdp.png"alt="">
+      </div>
+      <div class="box">
+          <h3>Follow us</h3>
+          <a href="#" class="links"> <i class='bx bxl-facebook-circle' ></i>facebook</a>
+          <a href="#" class="links"> <i class='bx bxl-instagram'></i>Instagram</a>
+          <a href="#" class="links"> <i class='bx bxl-linkedin' ></i>linkedin</a>
+      </div>
+  
+      </div>
+      
+  
+    </div>
+  
+    <div class="credit text-center"> created by <span> Yourskin team</span>|all rights reserved</div>
+  </section>
+</html>
